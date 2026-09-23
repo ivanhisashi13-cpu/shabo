@@ -1,0 +1,26 @@
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: sqlite:////data/shabo.db
+      SECRET_KEY: ${SECRET_KEY}
+      TOKEN_EXPIRE_DAYS: ${TOKEN_EXPIRE_DAYS:-30}
+      TURN_TIMEOUT_SECONDS: ${TURN_TIMEOUT_SECONDS:-30}
+      PEEK_TIMEOUT_SECONDS: ${PEEK_TIMEOUT_SECONDS:-15}
+      REVEAL_SECONDS: ${REVEAL_SECONDS:-3}
+      TARGET_SCORE: ${TARGET_SCORE:-100}
+      TZ: Asia/Shanghai
+    volumes:
+      - shabo_data:/data
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    ports:
+      - "8082:80"
+    depends_on:
+      - backend
+
+volumes:
+  shabo_data:

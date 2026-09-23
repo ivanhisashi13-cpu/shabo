@@ -1,0 +1,118 @@
+[牌组]
+  PASS  牌组共 54 张
+  PASS  0 号牌 2 张
+  PASS  1-13 每个点数 4 张
+  PASS  点数即分数
+  PASS  7/8 为自窥
+  PASS  9/10 为窥敌
+  PASS  11/12 为换牌
+  PASS  13 与 0-6 无技能
+  PASS  特殊牌共 24 张
+  PASS  牌 id 唯一
+[开局]
+  PASS  阶段进入 PEEK_PHASE
+  PASS  每人 4 张手牌
+  PASS  弃牌堆初始 1 张
+  PASS  牌堆剩余 41 张
+  PASS  发牌后无人知晓任何牌
+  PASS  拒绝重复槽位
+  PASS  拒绝非当前偷看者
+  PASS  偷看后仅自己可见 2 张
+  PASS  偷看后进入展示态
+  PASS  全员偷看后进入 PLAYING_PHASE
+  PASS  回合起始为 WAITING_ACTION
+[摸牌 / 弃牌 / 替换]
+  PASS  非当前玩家不能摸牌
+  PASS  摸牌后牌堆减 1
+  PASS  摸牌后状态 CARD_DRAWN
+  PASS  弃牌进入弃牌堆顶
+  PASS  弃牌后轮转到下一位
+  PASS  替换后新牌在槽位
+  PASS  替换后旧牌进入弃牌堆
+  PASS  替换后新牌仅自己可见
+[弃牌堆取牌]
+  PASS  弃牌堆顶进入手牌
+  PASS  旧手牌进入弃牌堆顶
+  PASS  弃牌堆数量不变
+  PASS  取牌为明牌，全员可见
+  PASS  取牌后回合结束
+  PASS  摸牌后不能再取弃牌堆
+[多张换牌 · 点数相同]
+  PASS  新牌落在首个选中的槽位
+  PASS  另一张相同点数的牌清空
+  PASS  手牌数量减少到 3
+  PASS  两张相同点数都进弃牌堆
+  PASS  多张换牌后回合结束
+[多张换牌 · 点数不同]
+  PASS  亮出的牌全员可见
+  PASS  原有手牌保持不动
+  PASS  摸到的牌收进手牌
+  PASS  额外罚牌 N-2 张
+  PASS  罚牌无人知晓
+  PASS  牌堆共少 2 张
+  PASS  手牌总数变成 6
+  PASS  弃牌堆取牌配对失败也会加牌
+  PASS  取来的明牌全员可见
+[技能 7 / 8 自窥]
+  PASS  7 号进入目标选择
+  PASS  7 号看到自己的牌
+  PASS  7 号自身进入弃牌堆
+  PASS  7 号后进入展示态
+  PASS  展示结束后回合切换
+  PASS  8 号同为自窥
+[技能 9 / 10 窥敌]
+  PASS  9 号为窥敌
+  PASS  9 号看到对手的牌
+  PASS  9 号不泄露给被看者
+  PASS  被偷看者快照仍看不到自己的牌
+  PASS  10 号同为窥敌
+[技能 11 / 12 换牌]
+  PASS  11 号完成交换
+  PASS  11 号可见性跟随牌移动
+  PASS  11 号换回的牌未知（盲换）
+  PASS  11 号后回合结束
+  PASS  12 号同为换牌
+  PASS  12 号换牌成功
+[两人局特殊规则]
+  PASS  两人局窥敌跳过选人
+  PASS  两人局换牌自动锁定对手
+[回合顺序]
+  PASS  三人局按座位循环
+  PASS  离线玩家仍然轮到
+  PASS  离线玩家超时后交还回合
+[SHABO 呼叫与结算]
+  PASS  呼叫后进入 CABO_COUNTDOWN
+  PASS  剩余回合为其余玩家
+  PASS  倒计时阶段禁止再次呼叫
+  PASS  倒计时结束后结算
+  PASS  呼叫者基础分 14
+  PASS  呼叫失败 +10 惩罚
+  PASS  全 0 分为第一名
+  PASS  四张 1 基础分 4
+[SHABO 呼叫成功]
+  PASS  呼叫成功无惩罚
+  PASS  单局模式一局即结束
+  PASS  胜者为最低分
+[神风翻盘]
+  PASS  神风玩家被标记
+  PASS  神风玩家本局 0 分
+  PASS  神风覆盖 SHABO 惩罚
+  PASS  其余玩家 +50
+  PASS  其余玩家手牌分照算
+  PASS  神风玩家获胜
+[洗牌与超时]
+  PASS  牌堆耗尽后自动洗牌
+  PASS  弃牌堆保留顶部 1 张后重洗
+  PASS  回合超时自动摸牌并弃牌
+  PASS  超时后轮转
+[累计 100 分]
+  PASS  多局模式累计总分
+  PASS  未达 100 分继续比赛
+  PASS  有人累计到 100 分整场结束
+  PASS  累计最低者获胜
+  PASS  结算标记总分最高者为傻波儿
+[离场处理]
+  PASS  两人局有人离场即结算
+  PASS  离场玩家不计入结算
+
+通过 99 项，失败 0 项
